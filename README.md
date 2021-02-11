@@ -9,7 +9,7 @@ It includes 3 algorithms:
 
 ## Verify the results 
 
-To verify our results in Table 1
+To verify our results in Table 1 as follows for the 5 LWE-based NIST candidates, one just need to run the estimator directly.
 
 ## Estimate a new scheme
 
