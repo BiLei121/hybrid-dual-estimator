@@ -10,7 +10,7 @@ It includes 3 algorithms:
 ## Verify the results 
 
 To verify our results in Table 1 for the 5 LWE-based NIST candidates, one just need to run the estimator directly. 
-The estimator only take less than 2 minutes for the core-SVP model, and for the practical model it takes about 10-20 minutes.
+The estimator only take less than 2 minutes for the core-SVP model, and it takes about 10-20 minutes for the practical model.
 Among all the schemes, estimating Frodo takes most time. 
 Therefore, for Frodo, we use the following strategy to accelerate the estimator.
 
