@@ -9,7 +9,7 @@ It includes 3 algorithms:
 
 ## Verify the results 
 
-To verify our results in Table
+To verify our results in Table 1
 
 ## Estimate a new scheme
 
@@ -27,7 +27,7 @@ To estimate a new scheme other than those 5 NIST candidates, one need to provide
  <col width=152 style='mso-width-source:userset;mso-width-alt:4864;width:114pt'>
  <col width=87 span=6 style='width:65pt'>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
-  <td colspan=8 height=33 class=xl67 width=861 style='height:25.0pt;width:644pt'>Estimations
+  <td colspan=8 height=33 class=xl67 width=861 style='height:25.0pt;width:644pt'>Table 1: Estimations
   under classical core-SVP model</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
