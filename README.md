@@ -21,14 +21,11 @@ To estimate a new scheme other than those 5 NIST candidates, one need to provide
 2. The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under HYBTID2M for NTRULPrime857 with and without the restriction are 167.326 and 167.307, respectively.
 
 
-<table border=0 align="center" cellpadding=0 cellspacing=0 width=861 style='border-collapse:
+<table border=0 align="center" text-align:"center" cellpadding=0 cellspacing=0 width=861 style='border-collapse:
  collapse;table-layout:fixed;width:644pt'>
  <col width=187 style='mso-width-source:userset;mso-width-alt:5973;width:140pt'>
  <col width=152 style='mso-width-source:userset;mso-width-alt:4864;width:114pt'>
  <col width=87 span=6 style='width:65pt'>
- <style type="text/css">
- table{text-align:center}
- </style>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td colspan=8 height=33 class=xl67 width=861 style='height:25.0pt;width:644pt'>Table 1: Estimations
   under classical core-SVP model</td>
