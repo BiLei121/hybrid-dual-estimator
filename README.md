@@ -14,15 +14,12 @@ The estimator only take less than 2 minutes for the core-SVP model, and for the 
 Among all the schemes, estimating Frodo takes most time. 
 Therefore, for Frodo, we use the following strategy to accelerate the estimator.
 
-
 ## Estimate a new scheme
-
-To estimate a new scheme other than those 5 NIST candidates, one need to provide the parameters of the scheme. 
-
+To estimate a new scheme other than those 5 NIST candidates, one need to provide the parameters of the scheme.
+Note that for the schemes that error and secret are from different distributions, one need to compute the scaling factor "c" in the parameter sets.
 
 ## Remarks
-1.  In HYBRID1 and HYBTID2M, we use ![](http://latex.codecogs.com/svg.latex?\max(T_{BKZ},T_{guess})) instead of ![](http://latex.codecogs.com/svg.latex?T_{BKZ}+T_{guess}) to make the algorithm easier and much quicker. This, however, may de- crease the final result by up to 1 bit.
-2. The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under HYBTID2M for NTRULPrime857 with and without the restriction are 167.326 and 167.307, respectively.
+The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under HYBTID2M for NTRULPrime857 with and without the restriction are 167.326 and 167.307, respectively.
 
 
 <table border=0 align="center" cellpadding=0 cellspacing=0 width=861 style='border-collapse:
