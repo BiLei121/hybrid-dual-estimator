@@ -224,14 +224,14 @@ def dual_guess_estimation(instance,costmodel):
 				bestps=ps
 			if cost<mincost_r:
 				mincost_r=cost
-
+				
 	hybrid2m_row=['HYBRID 2M',bestb,bestr,bestm,round(bestdual,2),round(bestguess,2),round(mincost,2)]
 
 	table=PrettyTable([' Attack ','   b   ','   r   ','   m   ','T(dual)','T(guess)','   T   '])
 	table.title='(Hybrid) Dual attack on '+ series + str(name)
 	table.add_row(Dual_row)
 	table.add_row(hybrid1_row)
-	table.add_row(hybrid2_row)
+	table.add_row(hybrid2m_row)
 	print(table)
 
 	return 1
