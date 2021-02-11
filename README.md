@@ -10,7 +10,7 @@ It includes 3 algorithm:
 
 To verify our results 
 
-##Estimate a new scheme
+## Estimate a new scheme
 
 ## Remarks
 1.  In “guess-all” and “optimal-guess”, we use ![](http://latex.codecogs.com/svg.latex?\max(T_{BKZ},T_{guess})) instead of ![](http://latex.codecogs.com/svg.latex?T_{BKZ}+T_{guess}) to make the algorithm easier and much quicker. This, however, may de- crease the final result by up to 1 bit.
