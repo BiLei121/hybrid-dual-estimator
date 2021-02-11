@@ -4,28 +4,30 @@ We provide an estimator by using the hybrid dual attack for all 5 LWE-based NIST
 
 It includes 3 algorithms:
 1. dual: the standard dual attack;
-2. HYBRID1: the hybrid dual attack which guesses all possible vectors of the secret;
-3. HYBTID2M: the hybrid dual attack with optimal pruning and efficient matrix multiplication.
+2. Hybrid 1: the hybrid dual attack which guesses all possible vectors of the secret;
+3. Hybrid 2: the hybrid dual attack with optimal pruning and efficient matrix multiplication.
 
 ## Verify the results 
 
 To verify our results in Table 1 for the 5 LWE-based NIST candidates, one just need to run the estimator directly. 
 The estimator only take less than 2 minutes for the core-SVP model, and it takes about 10-20 minutes for the practical model.
 
-Among all the schemes, estimating Frodo takes most time as the secret range is too wide. 
+Among all the schemes, estimating Frodo takes the most time as its secret range is very large. 
 Therefore, for Frodo, we use the following strategy to accelerate the estimator.
-We reduce the "tk" for this kind of schemes with wide secret range.
-For example, the secret range of Frodo640 is (-12,12),then the exact value of "tk" is 13.
+We reduce the "tk" for this kind of schemes with large secret range.
+For example, the secret range of Frodo640 is (-12,12), then the exact value of "tk" is 13.
 We set this value to 8 so that the estimator will finish in 2 minutes (for the classical core-SVP oracle).
+Note that this strategy gives us an “upper bound” for the estimation.
+Nevertheless, the influence of this change on the result is very small.
 The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
-Note that this strategy gives us an “upper bound” for our “lower bound” estimation. Our experiments show that this “upper bound” is almost tight for Frodo.
+
 
 ## Estimate a new scheme
 To estimate a new scheme other than those 5 NIST candidates, one need to provide the parameters of the scheme.
 Note that for the schemes that error and secret are from different distributions, one need to compute the scaling factor "c" in the parameter sets.
 
 ## Remarks
-The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under HYBTID2M for NTRULPrime857 with and without the restriction are 167.326 and 167.307, respectively.
+The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under Hybrid 2 for NTRULPrime857 with and without the restriction are 168.022 and 168.024, respectively.
 
 
 <table border=0 align="center" cellpadding=0 cellspacing=0 width=861 style='border-collapse:
