@@ -18,5 +18,5 @@ To estimate a new scheme other than those 5 NIST candidates, one need to provide
 
 ## Remarks
 1.  In HYBRID1 and HYBTID2M, we use ![](http://latex.codecogs.com/svg.latex?\max(T_{BKZ},T_{guess})) instead of ![](http://latex.codecogs.com/svg.latex?T_{BKZ}+T_{guess}) to make the algorithm easier and much quicker. This, however, may de- crease the final result by up to 1 bit.
-2. The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The differ- ence caused by this is negligible. For example, the results under “optimal-guess” for NTRULPrime857 with and without the restriction are 167.326 and 167.307, respectively.
+2. The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under HYBTID2M for NTRULPrime857 with and without the restriction are 167.326 and 167.307, respectively.
 
