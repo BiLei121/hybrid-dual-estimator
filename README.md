@@ -9,7 +9,7 @@ It includes 3 algorithms:
 
 ## Verify the results 
 
-To verify our results 
+To verify our results in Table
 
 ## Estimate a new scheme
 
