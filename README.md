@@ -4,8 +4,8 @@ We provide an estimator by using the hybrid dual attack for all 5 LWE-based NIST
 
 It includes 3 algorithms:
 1. dual: the standard dual attack;
-2. Hybrid 1: the hybrid dual attack which guesses all possible vectors of the secret;
-3. Hybrid 2: the hybrid dual attack with optimal pruning and efficient matrix multiplication.
+2. HYBRID1: the hybrid dual attack which guesses all possible vectors of the secret;
+3. HYBRID2M: the hybrid dual attack with optimal pruning and efficient matrix multiplication.
 
 ## Verify the results 
 
@@ -25,9 +25,6 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
 ## Estimate a new scheme
 To estimate a new scheme other than those 5 NIST candidates, one need to provide the parameters of the scheme.
 Note that for the schemes that error and secret are from different distributions, one need to compute the scaling factor "c" in the parameter sets.
-
-## Remarks
-The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under Hybrid 2 for NTRULPrime857 with and without the restriction are 168.022 and 168.024, respectively.
 
 
 <table border=0 align="center" cellpadding=0 cellspacing=0 width=861 style='border-collapse:
@@ -217,3 +214,6 @@ The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To 
  </tr>
  <![endif]>
 </table>
+
+## Remarks
+The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under Hybrid 2 for NTRULPrime857 with and without the restriction are 168.022 and 168.024, respectively.
