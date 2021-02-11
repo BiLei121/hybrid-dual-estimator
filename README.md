@@ -9,8 +9,8 @@ It includes 3 algorithms:
 
 ## Verify the results 
 
-To verify our results in Table 1 as follows for the 5 LWE-based NIST candidates, one just need to run the estimator directly. 
-The estimator
+To verify our results in Table 1 for the 5 LWE-based NIST candidates, one just need to run the estimator directly. 
+The estimator only take less than 2 minutes for the core-SVP model, and for the practical model it takes about 10-20 minutes.
 
 ## Estimate a new scheme
 
