@@ -6,7 +6,9 @@ It includes 3 algorithm:
 2. HYBRID1: the hybrid dual attack which guesses all possible vectors of the secret;
 3. HYBTID2M: the hybrid dual attack with optimal pruning and efficient matrix multiplication.
 
-**Verify the results.** To verify our results 
+#Verify the results 
+
+To verify our results 
 
 **Estimate a new scheme.** 
 
