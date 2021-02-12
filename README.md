@@ -21,12 +21,6 @@ Note that this strategy gives us an “upper bound” for the estimation.
 Nevertheless, the influence of this change on the result is very small.
 The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
 
-
-## Estimate a new scheme
-To estimate a new scheme other than those 5 NIST candidates, one need to provide the parameters of the scheme.
-Note that for the schemes that error and secret are from different distributions, one need to compute the scaling factor "c" in the parameter sets.
-
-
 <table border=0 align="center" cellpadding=0 cellspacing=0 width=861 style='border-collapse:
  collapse;table-layout:fixed;width:644pt'>
  <col width=187 style='mso-width-source:userset;mso-width-alt:5973;width:140pt'>
@@ -214,6 +208,10 @@ Note that for the schemes that error and secret are from different distributions
  </tr>
  <![endif]>
 </table>
+
+## Estimate a new scheme
+To estimate a new scheme other than those 5 NIST candidates, one need to provide the parameters of the scheme.
+Note that for the schemes that error and secret are from different distributions, one need to compute the scaling factor "c" in the parameter sets.
 
 ## Remarks
 The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under Hybrid 2 for NTRULPrime857 with and without the restriction are 168.022 and 168.024, respectively.
