@@ -195,18 +195,6 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
   <td class=xl65 style='border-top:none;border-left:none'>167</td>
   <td class=xl65 style='border-top:none;border-left:none'>9</td>
  </tr>
- <![if supportMisalignedColumns]>
- <tr height=0 style='display:none'>
-  <td width=187 style='width:140pt'></td>
-  <td width=152 style='width:114pt'></td>
-  <td width=87 style='width:65pt'></td>
-  <td width=87 style='width:65pt'></td>
-  <td width=87 style='width:65pt'></td>
-  <td width=87 style='width:65pt'></td>
-  <td width=87 style='width:65pt'></td>
-  <td width=87 style='width:65pt'></td>
- </tr>
- <![endif]>
 </table>
 
 ## Estimate a new scheme
