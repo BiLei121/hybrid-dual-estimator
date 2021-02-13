@@ -22,7 +22,7 @@ Nevertheless, the influence of this change on the result is very small.
 The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
 
 
-<table border=0 cellpadding=0 cellspacing=0 width=845 style='border-collapse:
+<table border=0 align="center" cellpadding=0 cellspacing=0 width=845 style='border-collapse:
  collapse;table-layout:fixed;width:632pt'>
  <col width=187 style='mso-width-source:userset;mso-width-alt:5973;width:140pt'>
  <col width=136 style='mso-width-source:userset;mso-width-alt:4352;width:102pt'>
