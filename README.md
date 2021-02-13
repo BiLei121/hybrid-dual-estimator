@@ -28,7 +28,7 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  <col width=136 style='mso-width-source:userset;mso-width-alt:4352;width:102pt'>
  <col width=87 span=6 style='width:65pt'>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
-  <td colspan=8 height=33 class=xl67 width=845 style='height:25.0pt;width:632pt'>Estimations
+  <td colspan=8 height=33 class=xl67 width=845 style='height:25.0pt;width:632pt'>Table1: Estimations
   under classical core-SVP model</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
