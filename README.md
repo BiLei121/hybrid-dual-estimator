@@ -21,7 +21,8 @@ Note that this strategy gives us an “upper bound” for the estimation.
 Nevertheless, the influence of this change on the result is very small.
 The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
 
-<table border=0 align="center" cellpadding=0 cellspacing=0 width=845 style='border-collapse:
+
+<table border=0 cellpadding=0 cellspacing=0 width=845 style='border-collapse:
  collapse;table-layout:fixed;width:632pt'>
  <col width=187 style='mso-width-source:userset;mso-width-alt:5973;width:140pt'>
  <col width=136 style='mso-width-source:userset;mso-width-alt:4352;width:102pt'>
@@ -225,6 +226,18 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
   <td class=xl65 style='border-top:none;border-left:none'>927</td>
   <td class=xl65 style='border-top:none;border-left:none'>14</td>
  </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=187 style='width:140pt'></td>
+  <td width=136 style='width:102pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+ </tr>
+ <![endif]>
 </table>
 
 ## Estimate a new scheme
