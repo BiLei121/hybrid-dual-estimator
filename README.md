@@ -21,14 +21,15 @@ Note that this strategy gives us an “upper bound” for the estimation.
 Nevertheless, the influence of this change on the result is very small.
 The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
 
-<table border=0 align="center" cellpadding=0 cellspacing=0 width=861 style='border-collapse:
- collapse;table-layout:fixed;width:644pt'>
+
+<table border=0 align="center" cellpadding=0 cellspacing=0 width=845 style='border-collapse:
+ collapse;table-layout:fixed;width:632pt'>
  <col width=187 style='mso-width-source:userset;mso-width-alt:5973;width:140pt'>
- <col width=152 style='mso-width-source:userset;mso-width-alt:4864;width:114pt'>
+ <col width=136 style='mso-width-source:userset;mso-width-alt:4352;width:102pt'>
  <col width=87 span=6 style='width:65pt'>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
-  <td colspan=8 height=33 class=xl67 width=861 style='height:25.0pt;width:644pt'>Table 1: Estimations
-  under classical core-SVP model</td>
+  <td colspan=8 height=33 class=xl67 width=845 style='height:25.0pt;width:632pt'>Table1:
+  Estimations under classical core-SVP model</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td rowspan=2 height=66 class=xl65 style='height:50.0pt;border-top:none'>Name</td>
@@ -48,12 +49,12 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Kyber512</td>
   <td class=xl65 style='border-top:none;border-left:none'>1</td>
-  <td class=xl65 style='border-top:none;border-left:none'>112</td>
-  <td class=xl65 style='border-top:none;border-left:none'>108</td>
-  <td class=xl65 style='border-top:none;border-left:none'>14</td>
-  <td class=xl65 style='border-top:none;border-left:none'>369</td>
-  <td class=xl65 style='border-top:none;border-left:none'>482</td>
-  <td class=xl65 style='border-top:none;border-left:none'>4</td>
+  <td class=xl65 style='border-top:none;border-left:none'>118</td>
+  <td class=xl65 style='border-top:none;border-left:none'>115</td>
+  <td class=xl65 style='border-top:none;border-left:none'>13</td>
+  <td class=xl65 style='border-top:none;border-left:none'>391</td>
+  <td class=xl65 style='border-top:none;border-left:none'>502</td>
+  <td class=xl65 style='border-top:none;border-left:none'>3</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Kyber768</td>
@@ -108,31 +109,31 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium768</td>
   <td class=xl65 style='border-top:none;border-left:none'>1</td>
-  <td class=xl65 style='border-top:none;border-left:none'>100</td>
-  <td class=xl65 style='border-top:none;border-left:none'>99</td>
-  <td class=xl65 style='border-top:none;border-left:none'>6</td>
-  <td class=xl65 style='border-top:none;border-left:none'>339</td>
-  <td class=xl65 style='border-top:none;border-left:none'>890</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1</td>
+  <td class=xl65 style='border-top:none;border-left:none'>124</td>
+  <td class=xl65 style='border-top:none;border-left:none'>122</td>
+  <td class=xl65 style='border-top:none;border-left:none'>14</td>
+  <td class=xl65 style='border-top:none;border-left:none'>416</td>
+  <td class=xl65 style='border-top:none;border-left:none'>1030</td>
+  <td class=xl65 style='border-top:none;border-left:none'>2</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1024</td>
   <td class=xl65 style='border-top:none;border-left:none'>2</td>
-  <td class=xl65 style='border-top:none;border-left:none'>142</td>
-  <td class=xl65 style='border-top:none;border-left:none'>140</td>
-  <td class=xl65 style='border-top:none;border-left:none'>10</td>
-  <td class=xl65 style='border-top:none;border-left:none'>479</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1134</td>
-  <td class=xl65 style='border-top:none;border-left:none'>2</td>
+  <td class=xl65 style='border-top:none;border-left:none'>182</td>
+  <td class=xl65 style='border-top:none;border-left:none'>179</td>
+  <td class=xl65 style='border-top:none;border-left:none'>15</td>
+  <td class=xl65 style='border-top:none;border-left:none'>614</td>
+  <td class=xl65 style='border-top:none;border-left:none'>1358</td>
+  <td class=xl65 style='border-top:none;border-left:none'>3</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1280</td>
   <td class=xl65 style='border-top:none;border-left:none'>3</td>
-  <td class=xl65 style='border-top:none;border-left:none'>175</td>
-  <td class=xl65 style='border-top:none;border-left:none'>172</td>
-  <td class=xl65 style='border-top:none;border-left:none'>16</td>
-  <td class=xl65 style='border-top:none;border-left:none'>588</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1317</td>
+  <td class=xl65 style='border-top:none;border-left:none'>251</td>
+  <td class=xl65 style='border-top:none;border-left:none'>247</td>
+  <td class=xl65 style='border-top:none;border-left:none'>29</td>
+  <td class=xl65 style='border-top:none;border-left:none'>844</td>
+  <td class=xl65 style='border-top:none;border-left:none'>1717</td>
   <td class=xl65 style='border-top:none;border-left:none'>3</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
@@ -187,7 +188,7 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime857</td>
-  <td class=xl65 style='border-top:none;border-left:none'>3</td>
+  <td class=xl65 style='border-top:none;border-left:none'>2</td>
   <td class=xl65 style='border-top:none;border-left:none'>177</td>
   <td class=xl65 style='border-top:none;border-left:none'>168</td>
   <td class=xl65 style='border-top:none;border-left:none'>44</td>
@@ -195,6 +196,35 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
   <td class=xl65 style='border-top:none;border-left:none'>167</td>
   <td class=xl65 style='border-top:none;border-left:none'>9</td>
  </tr>
+ <tr height=33 style='mso-height-source:userset;height:25.0pt'>
+  <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime953</td>
+  <td class=xl65 style='border-top:none;border-left:none'>3</td>
+  <td class=xl65 style='border-top:none;border-left:none'>196</td>
+  <td class=xl65 style='border-top:none;border-left:none'>187</td>
+  <td class=xl65 style='border-top:none;border-left:none'>44</td>
+  <td class=xl65 style='border-top:none;border-left:none'>636</td>
+  <td class=xl65 style='border-top:none;border-left:none'>722</td>
+  <td class=xl65 style='border-top:none;border-left:none'>9</td>
+ </tr>
+ <tr height=33 style='mso-height-source:userset;height:25.0pt'>
+  <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime1013</td>
+  <td class=xl65 style='border-top:none;border-left:none'>4</td>
+  <td class=xl65 style='border-top:none;border-left:none'>210</td>
+  <td class=xl65 style='border-top:none;border-left:none'>200</td>
+  <td class=xl65 style='border-top:none;border-left:none'>45</td>
+  <td class=xl65 style='border-top:none;border-left:none'>683</td>
+  <td class=xl65 style='border-top:none;border-left:none'>780</td>
+  <td class=xl65 style='border-top:none;border-left:none'>10</td>
+ </tr>
+ <tr height=33 style='mso-height-source:userset;height:25.0pt'>
+  <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime1277</td>
+  <td class=xl65 style='border-top:none;border-left:none'>5</td>
+  <td class=xl65 style='border-top:none;border-left:none'>270</td>
+  <td class=xl65 style='border-top:none;border-left:none'>256</td>
+  <td class=xl65 style='border-top:none;border-left:none'>84</td>
+  <td class=xl65 style='border-top:none;border-left:none'>869</td>
+  <td class=xl65 style='border-top:none;border-left:none'>927</td>
+  <td class=xl65 style='border-top:none;border-left:none'>14</td>
 </table>
 
 ## Estimate a new scheme
