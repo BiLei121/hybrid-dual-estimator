@@ -108,7 +108,7 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1024</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1</td>
+  <td class=xl65 style='border-top:none;border-left:none'>2</td>
   <td class=xl65 style='border-top:none;border-left:none'>124</td>
   <td class=xl65 style='border-top:none;border-left:none'>122</td>
   <td class=xl65 style='border-top:none;border-left:none'>14</td>
@@ -118,7 +118,7 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1280</td>
-  <td class=xl65 style='border-top:none;border-left:none'>2</td>
+  <td class=xl65 style='border-top:none;border-left:none'>3</td>
   <td class=xl65 style='border-top:none;border-left:none'>182</td>
   <td class=xl65 style='border-top:none;border-left:none'>179</td>
   <td class=xl65 style='border-top:none;border-left:none'>15</td>
@@ -128,7 +128,7 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1792</td>
-  <td class=xl65 style='border-top:none;border-left:none'>3</td>
+  <td class=xl65 style='border-top:none;border-left:none'>5</td>
   <td class=xl65 style='border-top:none;border-left:none'>251</td>
   <td class=xl65 style='border-top:none;border-left:none'>247</td>
   <td class=xl65 style='border-top:none;border-left:none'>29</td>
