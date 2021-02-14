@@ -148,10 +148,10 @@ def dual_guess_estimation(instance,costmodel):
 				p=p-alpha*a['numb']*a['prob']
 				break
 		S=math.log2(L)        
-		ps=math.log2(p)
+		pc=math.log2(p)
 
 		guess=S-2*epsilon+math.log2(kappa)
-		return guess,ps
+		return guess,pc
 
 	def guess_number(r,distribution): # T_guess for Hybrid 1
 		length=2*(len(distribution)-1)+1
@@ -172,7 +172,7 @@ def dual_guess_estimation(instance,costmodel):
 			bestm=m
 			b0=b
 	
-	Dual_row=['Dual',b0,'-',bestm,round(mincost,2),'-',round(mincost,2)]
+	Dual_row=['Dual',b0,'-',bestm,round(mincost,2),'-','-',round(mincost,2)]
 
 	####################################################################
 	# find the optimal r and b for Hybrid 1
@@ -196,7 +196,7 @@ def dual_guess_estimation(instance,costmodel):
 				bestguess=guess
 				bestdual=dual
 	
-	hybrid1_row=['HYBRID 1',b1,r1,bestm,round(bestdual,2),round(bestguess,2),round(mincost,2)]
+	hybrid1_row=['HYBRID 1',b1,r1,bestm,round(bestdual,2),round(bestguess,2),'-',round(mincost,2)]
 	
 	####################################################################
 	# find the optimal r and b for Hybrid 2
@@ -215,8 +215,8 @@ def dual_guess_estimation(instance,costmodel):
 			if m > mm:
 				m=mm
 			dual,e=dual_cost(n,q,m,r,b,c,costmodel)
-			guess,ps=guess_compare(t,dual,e)
-			cost=guess+math.log(2**(dual-guess)+1,2)-ps # replace 2**dual+2**guess to avoid too large numbers
+			guess,pc=guess_compare(t,dual,e)
+			cost=guess+math.log(2**(dual-guess)+1,2)-pc # replace 2**dual+2**guess to avoid too large numbers
 			if cost<mincost:
 				mincost=cost
 				bestr=r
@@ -224,13 +224,13 @@ def dual_guess_estimation(instance,costmodel):
 				bestm=m
 				bestdual=dual
 				bestguess=guess
-				bestps=ps
+				bestpc=pc
 			if cost<mincost_r:
 				mincost_r=cost
 				
-	hybrid2m_row=['HYBRID 2M',bestb,bestr,bestm,round(bestdual,2),round(bestguess,2),round(mincost,2)]
+	hybrid2m_row=['HYBRID 2M',bestb,bestr,bestm,round(bestdual,2),round(bestguess,2),round(bestpc,2),round(mincost,2)]
 
-	table=PrettyTable([' Attack ','   b   ','   r   ','   m   ','T(dual)','T(guess)','   T   '])
+	table=PrettyTable([' Attack ','   b   ','   r   ','   m   ','T(dual)','T(guess)','  pc  ','   T   '])
 	table.title='(Hybrid) Dual attack on '+ series + str(name)
 	table.add_row(Dual_row)
 	table.add_row(hybrid1_row)
