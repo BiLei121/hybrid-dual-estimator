@@ -163,7 +163,7 @@ def dual_guess_estimation(instance,costmodel):
 	r=0
 	mincost=float('inf')
 	for b in range(int(50),int(2*n)):
-		m=int((n*math.log(q/c)/math.log(delta_bkz(b)))**(1/2)-n)
+		m=int((n*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-n)
 		if m > mm:
 			m=mm
 		cost,e=dual_cost(n,q,m,r,b,c,costmodel)
@@ -182,7 +182,7 @@ def dual_guess_estimation(instance,costmodel):
 		b_min=int(b0-2*r)
 		b_max=int(b0-0.5*r)+3
 		for b in range(b_min,b_max):
-			m=int(((n-r)*math.log(q/c)/math.log(delta_bkz(b)))**(1/2)-(n-r))
+			m=int(((n-r)*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-(n-r))
 			if m > mm:
 				m=mm
 			dual,e=dual_cost(n,q,m,r,b,c,costmodel)
@@ -211,7 +211,7 @@ def dual_guess_estimation(instance,costmodel):
 		b_max=int(b1-0.5*rr)+3
 		mincost_r=float('inf')
 		for b in range(b_min,b_max):
-			m=int((n*math.log(q/c)/math.log(delta_bkz(b)))**(1/2)-n)
+			m=int((n*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-n)
 			if m > mm:
 				m=mm
 			dual,e=dual_cost(n,q,m,r,b,c,costmodel)
