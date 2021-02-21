@@ -79,17 +79,24 @@ def dual_guess_estimation(instance,costmodel):
 	c=parameter.get('c',1)
 	distribution=instance['distribution']
 
-	def dual_cost(n,q,m,r,b,c,costmodel):
+	def advantage(n,q,m,r,b,c):
 		lattice=dual_lattice(m,n-r,q,b,c)	
-
 		dim=lattice['dim']
 		b0=lattice['b0']
 		tau=b0*s/q
 		epsilon=2+(-2*math.pi**2*tau**2)/math.log(2)
-		R=max(0,math.log2(kappa)-sieve(b)-2*epsilon)
-		cost=bkz_time(dim,b,costmodel)+R
+		return epsilon
 
-		return cost,epsilon
+	def dual_cost(n,q,m,r,b,c,S,costmodel):
+		lattice=dual_lattice(m,n-r,q,b,c)	
+		dim=lattice['dim']
+		b0=lattice['b0']
+		tau=b0*s/q
+		epsilon=2+(-2*math.pi**2*tau**2)/math.log(2)
+		M=math.log2(kappa+S*math.log(2))-2*epsilon
+		R=max(0,M-sieve(b))
+		cost=bkz_time(dim,b,costmodel)+R
+		return cost
 	
 	def guess_sort(distribution,r): # output a list s.t. all entries are sorted in descending order of prob
 		def prob(k,distribution,tk):
@@ -114,14 +121,12 @@ def dual_guess_estimation(instance,costmodel):
 			return T
 		
 		tk=len(distribution) # the size of each entry of the secret
-
 		# The secret range of Frodo is too large and the estimator will take a long time if we use tk=len(distribution)
 		# We set the following smaller "tk" for Frodo and the influence on the final result is very small. 
 		# Recommended values of tk for Frodo:
 		# Frodo 640: tk<=10
 		# Frodo 976: tk<=8
 		# Frodo 1344: tk<=6
-
 		if series=='Frodo':
 			if n<=640:
 				tk=8
@@ -129,33 +134,37 @@ def dual_guess_estimation(instance,costmodel):
 				tk=6
 			if 976<n<=1344:
 				tk=5
-
+		
 		L=ntos(tk,r)
 		K=compress(L,P=[])
 		t=dic(K,distribution,tk,r)
 		return t
 
-	def guess_compare(t,dual,epsilon): # guess according to T_BKZ
+	def guess_compare(t,BKZ,d,epsilon): # guess according to T_BKZ
 		L=0
 		p=0
-		dual=dual-2  # adjust T_guess and T_BKZ to minimize the overall cost of Hybrid 2
+		BKZ=BKZ-d  # adjust T_guess and T_BKZ to minimize the overall cost of Hybrid 2
 		for a in t:
 			L+=a['numb']
 			p+=a['numb']*a['prob']
-			if math.log2(kappa)+math.log2(L)-2*epsilon>dual: 
-				alpha=(L-(2**(2*epsilon+dual-math.log2(kappa))))/(a['numb'])
+			M=math.log2(kappa+math.log(L))-2*epsilon
+			if M+math.log2(L)>BKZ:  # guess too much and we need to adjust
+				alpha=(L-(2**(BKZ-M)))/(a['numb'])  # we should guess alpha*a['numb'] less candidates
 				L=L-alpha*a['numb']
 				p=p-alpha*a['numb']*a['prob']
 				break
-		S=math.log2(L)        
-		pc=math.log2(p)
-
-		guess=S-2*epsilon+math.log2(kappa)
-		return guess,pc
+		S=math.log2(L) 
+		M=math.log2(kappa+math.log(L))-2*epsilon  
+		guess=M+S     
+		pc=math.log2(p)	
+		return guess,S,pc
 
 	def guess_number(r,distribution): # T_guess for Hybrid 1
-		length=2*(len(distribution)-1)+1
-		S=math.log2(length**r*r)
+		if r==0:
+			S=0
+		else:
+			length=2*(len(distribution)-1)+1
+			S=math.log2(length**r*r)
 		return  S
 
 	####################################################################
@@ -166,7 +175,7 @@ def dual_guess_estimation(instance,costmodel):
 		m=int((n*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-n)
 		if m > mm:
 			m=mm
-		cost,e=dual_cost(n,q,m,r,b,c,costmodel)
+		cost=dual_cost(n,q,m,r,b,c,0,costmodel)
 		if cost<mincost:
 			mincost=cost
 			bestm=m
@@ -176,17 +185,18 @@ def dual_guess_estimation(instance,costmodel):
 
 	####################################################################
 	# find the optimal r and b for Hybrid 1
-	mincost=float('inf')
-	for r in range(1,100):
-		number=guess_number(r,distribution)
+	for r in range(0,100):
+		S=guess_number(r,distribution)
 		b_min=int(b0-2*r)
 		b_max=int(b0-0.5*r)+3
 		for b in range(b_min,b_max):
 			m=int(((n-r)*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-(n-r))
 			if m > mm:
 				m=mm
-			dual,e=dual_cost(n,q,m,r,b,c,costmodel)
-			guess=number-2*e+math.log2(kappa)
+			e=advantage(n,q,m,r,b,c)
+			dual=dual_cost(n,q,m,r,b,c,S,costmodel)
+			M=math.log2(kappa+S*math.log(2))-2*e
+			guess=M+S
 			cost=guess+math.log(2**(dual-guess)+1,2) # replace 2**dual+2**guess to avoid too large numbers
 			if cost<mincost:
 				mincost=cost
@@ -200,8 +210,13 @@ def dual_guess_estimation(instance,costmodel):
 	
 	####################################################################
 	# find the optimal r and b for Hybrid 2
-	mincost=float('inf')
-	mincost_r=float('inf')
+	d=2 # the parameter to adjust T_guess and T_BKZ to minimize the overall cost of Hybrid 2
+	mincost_r=mincost 
+	if r1==0:
+		bestr=0
+		bestb=b1
+		bestpc=0
+		r1=r1+1
 	for r in range(r1,100):
 		if mincost_r > mincost+1: # if true then the optimal r is past and we can stop
 			break
@@ -214,8 +229,12 @@ def dual_guess_estimation(instance,costmodel):
 			m=int((n*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-n)
 			if m > mm:
 				m=mm
-			dual,e=dual_cost(n,q,m,r,b,c,costmodel)
-			guess,pc=guess_compare(t,dual,e)
+			if dual_cost(n,q,m,r,b,c,0,costmodel) > mincost: # dual cost alone is already too large
+				continue
+			BKZ=bkz_time(m+n-r,b,costmodel)
+			e=advantage(n,q,m,r,b,c)
+			guess,S,pc=guess_compare(t,BKZ,d,e)
+			dual=dual_cost(n,q,m,r,b,c,S,costmodel)
 			cost=guess+math.log(2**(dual-guess)+1,2)-pc # replace 2**dual+2**guess to avoid too large numbers
 			if cost<mincost:
 				mincost=cost
