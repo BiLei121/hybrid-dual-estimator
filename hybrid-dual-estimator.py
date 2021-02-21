@@ -226,7 +226,7 @@ def dual_guess_estimation(instance,costmodel):
 		b_max=int(b1-0.5*rr)+3
 		mincost_r=float('inf')
 		for b in range(b_min,b_max):
-			m=int((n*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-n)
+			m=int(((n-r)*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-(n-r))
 			if m > mm:
 				m=mm
 			if dual_cost(n,q,m,r,b,c,0,costmodel) > mincost: # dual cost alone is already too large
