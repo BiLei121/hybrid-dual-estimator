@@ -10,13 +10,13 @@ It includes 3 algorithms:
 ## Verify the results 
 
 To verify our results in Table 1 for the 5 LWE-based NIST candidates, one just need to run the estimator directly. 
-The estimator only take less than 2 minutes for the core-SVP model, and it takes about 10-20 minutes for the practical model.
+The estimator only take less than 2 minutes for the core-SVP model, and it takes about 10 minutes for the practical model.
 
 Among all the schemes, estimating Frodo takes the most time as its secret range is very large. 
 Therefore, for Frodo, we use the following strategy to accelerate the estimator.
 We reduce the "tk" for this kind of schemes with large secret range.
 For example, the secret range of Frodo640 is (-12,12), then the exact value of "tk" is 13.
-We set this value to 8 so that the estimator will finish in 2 minutes (for the classical core-SVP oracle).
+We set this value to 7 so that the estimator will finish in 2 minutes (for the classical core-SVP oracle).
 Note that this strategy gives us an “upper bound” for the estimation.
 Nevertheless, the influence of this change on the result is very small.
 The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
@@ -29,7 +29,7 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  <col width=87 span=6 style='width:65pt'>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td colspan=8 height=33 class=xl67 width=845 style='height:25.0pt;width:632pt'>Table1:
-  Estimations under classical core-SVP model</td>
+  Estimations under classical core-SVP model and assumption from [ADPS16]</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td rowspan=2 height=66 class=xl65 style='height:50.0pt;border-top:none'>Name</td>
@@ -232,4 +232,4 @@ To estimate a new scheme other than those 5 NIST candidates, one need to provide
 Note that for the schemes that error and secret are from different distributions, one need to compute the scaling factor "c" in the parameter sets.
 
 ## Remarks
-The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under Hybrid 2 for NTRULPrime857 with and without the restriction are 168.022 and 168.024, respectively.
+The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under Hybrid 2 for NTRULPrime857 with and without the restriction are 168.088 and 168.024, respectively.
