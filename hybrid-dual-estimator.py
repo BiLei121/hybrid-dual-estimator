@@ -27,6 +27,7 @@ NTRULPrime1013={'series':'NTRULPrime','name':1013,'parameter':{'n':1013,'q':7177
 NTRULPrime1277={'series':'NTRULPrime','name':1277,'parameter':{'n':1277,'q':7879,'s':(2/3)**0.5,'mm':1533,'c':1.4},'distribution':{0:848/1277,1:429/1277/2}}
 
 kappa=128 # security parameter
+precision=1
 
 def bkz_time(d,b,costmodel):
   	if costmodel==1:
@@ -68,7 +69,7 @@ def compress(L,P=[]): # flatten L s.t. it is a top level list
             K += compress(x[1],P+[x[0]])
         return K
 
-def dual_guess_estimation(instance,costmodel):
+def dual_guess_estimation(instance,costmodel,asm):
 	series=instance['series']
 	name=instance['name']
 	parameter=instance['parameter']
@@ -79,24 +80,34 @@ def dual_guess_estimation(instance,costmodel):
 	c=parameter.get('c',1)
 	distribution=instance['distribution']
 
-	def advantage(n,q,m,r,b,c):
-		lattice=dual_lattice(m,n-r,q,b,c)	
+	def dual_cost(n,q,m,r,b,c,S,costmodel,asm):
+		lattice=dual_lattice(m,n-r,q,b,c)
 		dim=lattice['dim']
-		b0=lattice['b0']
-		tau=b0*s/q
-		epsilon=2+(-2*math.pi**2*tau**2)/math.log(2)
-		return epsilon
 
-	def dual_cost(n,q,m,r,b,c,S,costmodel):
-		lattice=dual_lattice(m,n-r,q,b,c)	
-		dim=lattice['dim']
-		b0=lattice['b0']
-		tau=b0*s/q
-		epsilon=2+(-2*math.pi**2*tau**2)/math.log(2)
-		M=math.log2(kappa+S*math.log(2))-2*epsilon
-		R=max(0,M-sieve(b))
-		cost=bkz_time(dim,b,costmodel)+R
-		return cost
+		if asm==1:
+			b0=lattice['b0']
+			tau=b0*s/q
+			epsilon=2+(-2*math.pi**2*tau**2)/math.log(2)
+			M=math.log2(kappa+S*math.log(2))-2*epsilon
+			R=max(0,M-sieve(b))
+			cost=bkz_time(dim,b,costmodel)+R
+		if asm==2:
+			b0=lattice['b0']*(4/3)**0.5
+			tau=b0*s/q
+			epsilon=2+(-2*math.pi**2*tau**2)/math.log(2)
+			M=math.log2(kappa+S*math.log(2))-2*epsilon
+			R=max(0,M-sieve(b))
+			cost=bkz_time(dim,b,costmodel)+R
+		if asm==3:
+			b0=lattice['b0']*2
+			tau=b0*s/q
+			epsilon=2+(-2*math.pi**2*tau**2)/math.log(2)
+			BKZ=bkz_time(dim,b,costmodel)
+			M=math.log2(kappa+S*math.log(2))-2*epsilon
+			LLL=M+bkz_time(dim,2,costmodel)
+			cost=LLL+math.log2(2**(BKZ-LLL)+1)
+
+		return cost,M
 	
 	def guess_sort(distribution,r): # output a list s.t. all entries are sorted in descending order of prob
 		def prob(k,distribution,tk):
@@ -121,15 +132,15 @@ def dual_guess_estimation(instance,costmodel):
 			return T
 		
 		tk=len(distribution) # the size of each entry of the secret
-		# The secret range of Frodo is too large and the estimator will take a long time if we use tk=len(distribution)
-		# We set the following smaller "tk" for Frodo and the influence on the final result is very small. 
+		# The secret range of Frodo is too large and the estimator will take a long time if we use tk=len(distribution) directly.
+		# We set the following smaller "tk" for Frodo. The influence on the final result is very small. 
 		# Recommended values of tk for Frodo:
-		# Frodo 640: tk<=10
-		# Frodo 976: tk<=8
-		# Frodo 1344: tk<=6
+		# Frodo 640: tk=7
+		# Frodo 976: tk=6
+		# Frodo 1344: tk=5
 		if series=='Frodo':
 			if n<=640:
-				tk=8
+				tk=7
 			if 640<n<=976:
 				tk=6
 			if 976<n<=1344:
@@ -140,24 +151,23 @@ def dual_guess_estimation(instance,costmodel):
 		t=dic(K,distribution,tk,r)
 		return t
 
-	def guess_compare(t,BKZ,d,epsilon): # guess according to T_BKZ
+	def guess_compare(t,dual,M,d): # guess according to T_BKZ
 		L=0
 		p=0
-		BKZ=BKZ-d  # adjust T_guess and T_BKZ to minimize the overall cost of Hybrid 2
+		dual=dual-d  # adjust T_guess and T_BKZ to minimize the overall cost of Hybrid 2
 		for a in t:
 			L+=a['numb']
 			p+=a['numb']*a['prob']
-			M=math.log2(kappa+math.log(L))-2*epsilon
-			if M+math.log2(L)>BKZ:  # guess too much and we need to adjust
-				alpha=(L-(2**(BKZ-M)))/(a['numb'])  # we should guess alpha*a['numb'] less candidates
-				L=L-alpha*a['numb']
-				p=p-alpha*a['numb']*a['prob']
+			if M+math.log2(L)>dual:  # guess too much and we need to adjust
+				gamma=(L-(2**(dual-M)))/(a['numb'])  # we should guess gamma*a['numb'] less candidates
+				L=L-gamma*a['numb']
+				p=p-gamma*a['numb']*a['prob']
 				break
-		S=math.log2(L) 
-		M=math.log2(kappa+math.log(L))-2*epsilon  
-		guess=M+S     
+		if L==0 or p==0:
+			return 0,float('-inf')
+		S=math.log2(L)    
 		pc=math.log2(p)	
-		return guess,S,pc
+		return S,pc
 
 	def guess_number(r,distribution): # T_guess for Hybrid 1
 		if r==0:
@@ -171,31 +181,29 @@ def dual_guess_estimation(instance,costmodel):
 	# find the optimal b for dual attack
 	r=0
 	mincost=float('inf')
-	for b in range(int(50),int(2*n)):
+	for b in range(int(100),2000):
 		m=int((n*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-n)
 		if m > mm:
 			m=mm
-		cost=dual_cost(n,q,m,r,b,c,0,costmodel)
+		cost,M=dual_cost(n,q,m,r,b,c,0,costmodel,asm)
 		if cost<mincost:
 			mincost=cost
 			bestm=m
 			b0=b
-	
-	Dual_row=['Dual',b0,'-',bestm,round(mincost,2),'-','-',round(mincost,2)]
+	Dual_row=['Dual',b0,'-',bestm,round(mincost,precision),'-','-',round(mincost,precision)]
 
 	####################################################################
 	# find the optimal r and b for Hybrid 1
-	for r in range(0,100):
+	mincost=float('inf')
+	for r in range(0,200):
 		S=guess_number(r,distribution)
-		b_min=int(b0-2*r)
-		b_max=int(b0-0.5*r)+3
+		b_min=max(int(b0-2*r),50)
+		b_max=b0+1
 		for b in range(b_min,b_max):
 			m=int(((n-r)*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-(n-r))
 			if m > mm:
 				m=mm
-			e=advantage(n,q,m,r,b,c)
-			dual=dual_cost(n,q,m,r,b,c,S,costmodel)
-			M=math.log2(kappa+S*math.log(2))-2*e
+			dual,M=dual_cost(n,q,m,r,b,c,S,costmodel,asm)
 			guess=M+S
 			cost=guess+math.log(2**(dual-guess)+1,2) # replace 2**dual+2**guess to avoid too large numbers
 			if cost<mincost:
@@ -205,36 +213,36 @@ def dual_guess_estimation(instance,costmodel):
 				bestm=m
 				bestguess=guess
 				bestdual=dual
-	
-	hybrid1_row=['HYBRID 1',b1,r1,bestm,round(bestdual,2),round(bestguess,2),'-',round(mincost,2)]
+	hybrid1_row=['HYBRID 1',b1,r1,bestm,round(bestdual,precision),round(bestguess,precision),'-',round(mincost,precision)]
 	
 	####################################################################
 	# find the optimal r and b for Hybrid 2
 	d=2 # the parameter to adjust T_guess and T_BKZ to minimize the overall cost of Hybrid 2
+	S_max=guess_number(r1,distribution)
 	mincost_r=mincost 
+	bestr=r1
+	bestb=b1
+	bestpc=0
 	if r1==0:
-		bestr=0
-		bestb=b1
-		bestpc=0
 		r1=r1+1
-	for r in range(r1,100):
+	for r in range(r1,200):
 		if mincost_r > mincost+1: # if true then the optimal r is past and we can stop
 			break
 		t=guess_sort(distribution,r)
 		rr=r-r1
-		b_min=int(b1-2*rr)
-		b_max=int(b1-0.5*rr)+3
+		b_min=max(int(b1-2*rr),50)
+		b_max=b1+1
 		mincost_r=float('inf')
 		for b in range(b_min,b_max):
 			m=int(((n-r)*math.log2(q/c)/math.log2(delta_bkz(b)))**(1/2)-(n-r))
 			if m > mm:
 				m=mm
-			if dual_cost(n,q,m,r,b,c,0,costmodel) > mincost: # dual cost alone is already too large
+			dual,M_max=dual_cost(n,q,m,r,b,c,S_max,costmodel,asm)
+			if  dual > mincost: # dual cost alone is already too large
 				continue
-			BKZ=bkz_time(m+n-r,b,costmodel)
-			e=advantage(n,q,m,r,b,c)
-			guess,S,pc=guess_compare(t,BKZ,d,e)
-			dual=dual_cost(n,q,m,r,b,c,S,costmodel)
+			S,pc=guess_compare(t,dual,M_max,d)
+			M=M_max+math.log2(kappa+S*math.log(2))-math.log2(kappa+S_max*math.log(2))
+			guess=M+S
 			cost=guess+math.log(2**(dual-guess)+1,2)-pc # replace 2**dual+2**guess to avoid too large numbers
 			if cost<mincost:
 				mincost=cost
@@ -247,7 +255,7 @@ def dual_guess_estimation(instance,costmodel):
 			if cost<mincost_r:
 				mincost_r=cost
 				
-	hybrid2m_row=['HYBRID 2M',bestb,bestr,bestm,round(bestdual,2),round(bestguess,2),round(bestpc,2),round(mincost,2)]
+	hybrid2m_row=['HYBRID 2M',bestb,bestr,bestm,round(bestdual,precision),round(bestguess,precision),round(bestpc,precision),round(mincost,precision)]
 
 	table=PrettyTable([' Attack ','   b   ','   r   ','   m   ','T(dual)','T(guess)','  pc  ','   T   '])
 	table.title='(Hybrid) Dual attack on '+ series + str(name)
@@ -258,31 +266,40 @@ def dual_guess_estimation(instance,costmodel):
 
 	return 1
 
+'''
+cost model: see function bkz_time 
+1: core-SVP
+2: core-SVP quantum
+3: practical 
+4: practical quantum
+
+assumption
+1: [ADPS16]
+2: [Ducas18]
+3: [Alb17]
+'''
 costmodel=1
+asm=1
 
-Kyber512_attack=dual_guess_estimation(Kyber512,costmodel)
-Kyber768_attack=dual_guess_estimation(Kyber768,costmodel)
-Kyber1024_attack=dual_guess_estimation(Kyber1024,costmodel)
+Kyber512_attack=dual_guess_estimation(Kyber512,costmodel,asm)
+Kyber768_attack=dual_guess_estimation(Kyber768,costmodel,asm)
+Kyber1024_attack=dual_guess_estimation(Kyber1024,costmodel,asm)
 
-Saber512_attack=dual_guess_estimation(Saber512,costmodel)
-Saber768_attack=dual_guess_estimation(Saber768,costmodel)
-Saber1024_attack=dual_guess_estimation(Saber1024,costmodel)
+Saber512_attack=dual_guess_estimation(Saber512,costmodel,asm)
+Saber768_attack=dual_guess_estimation(Saber768,costmodel,asm)
+Saber1024_attack=dual_guess_estimation(Saber1024,costmodel,asm)
 
-Dilithium768_attack=dual_guess_estimation(Dilithium768,costmodel)
-Dilithium1024_attack=dual_guess_estimation(Dilithium1024,costmodel)
-Dilithium1280_attack=dual_guess_estimation(Dilithium1280,costmodel)
+Dilithium768_attack=dual_guess_estimation(Dilithium768,costmodel,asm)
+Dilithium1024_attack=dual_guess_estimation(Dilithium1024,costmodel,asm)
+Dilithium1280_attack=dual_guess_estimation(Dilithium1280,costmodel,asm)
 
-Frodo640_attack=dual_guess_estimation(Frodo640,costmodel)
-Frodo976_attack=dual_guess_estimation(Frodo976,costmodel)
-Frodo1344_attack=dual_guess_estimation(Frodo1344,costmodel)
+Frodo640_attack=dual_guess_estimation(Frodo640,costmodel,asm)
+Frodo976_attack=dual_guess_estimation(Frodo976,costmodel,asm)
+Frodo1344_attack=dual_guess_estimation(Frodo1344,costmodel,asm)
 
-NTRULPrime653_attack=dual_guess_estimation(NTRULPrime653,costmodel)
-NTRULPrime761_attack=dual_guess_estimation(NTRULPrime761,costmodel)
-NTRULPrime857_attack=dual_guess_estimation(NTRULPrime857,costmodel)
-NTRULPrime953_attack=dual_guess_estimation(NTRULPrime953,costmodel)
-NTRULPrime1013_attack=dual_guess_estimation(NTRULPrime1013,costmodel)
-NTRULPrime1277_attack=dual_guess_estimation(NTRULPrime1277,costmodel)
-
-
-
-
+NTRULPrime653_attack=dual_guess_estimation(NTRULPrime653,costmodel,asm)
+NTRULPrime761_attack=dual_guess_estimation(NTRULPrime761,costmodel,asm)
+NTRULPrime857_attack=dual_guess_estimation(NTRULPrime857,costmodel,asm)
+NTRULPrime953_attack=dual_guess_estimation(NTRULPrime953,costmodel,asm)
+NTRULPrime1013_attack=dual_guess_estimation(NTRULPrime1013,costmodel,asm)
+NTRULPrime1277_attack=dual_guess_estimation(NTRULPrime1277,costmodel,asm)
