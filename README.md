@@ -1,11 +1,13 @@
 # hybrid-dual-estimator
 
-We provide an estimator by using the hybrid dual attack for all 5 LWE-based NIST candidates.
+We provide an estimator for all 5 LWE-based NIST candidates by using the hybrid dual attack based on our paper https://eprint.iacr.org/2021/152.
 
 It includes 3 algorithms:
 1. dual: the standard dual attack;
 2. HYBRID1: the hybrid dual attack which guesses all possible vectors of the secret;
 3. HYBRID2M: the hybrid dual attack with optimal pruning and efficient matrix multiplication.
+
+Users can select different cost models and assumptions by setting different values to 'costmodel' and 'asm'.
 
 ## Verify the results 
 
