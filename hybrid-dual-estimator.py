@@ -3,9 +3,9 @@ from scipy.special import comb
 from scipy import integrate
 from prettytable import PrettyTable
 
-Kyber512={'series':'Kyber','name':512,'parameter':{'n':256*2,'q':3329,'s':1.2,'mm':512},'distribution':{0:5/16,1:15/64,2:3/32,3:1/64}}
-Kyber768={'series':'Kyber','name':768,'parameter':{'n':256*3,'q':3329,'s':1,'mm':768},'distribution':{0:3/8,1:1/4,2:1/16}}
-Kyber1024={'series':'Kyber','name':1024,'parameter':{'n':256*4,'q':3329,'s':1,'mm':1024},'distribution':{0:3/8,1:1/4,2:1/16}}
+Kyber512={'series':'Kyber','name':512,'parameter':{'n':256*2,'q':3329,'s':1.2,'mm':768},'distribution':{0:5/16,1:15/64,2:3/32,3:1/64}}
+Kyber768={'series':'Kyber','name':768,'parameter':{'n':256*3,'q':3329,'s':1,'mm':1024},'distribution':{0:3/8,1:1/4,2:1/16}}
+Kyber1024={'series':'Kyber','name':1024,'parameter':{'n':256*4,'q':3329,'s':1,'mm':1280},'distribution':{0:3/8,1:1/4,2:1/16}}
 
 Saber512={'series':'Saber','name':512,'parameter':{'n':512,'q':2**13,'s':2.29,'mm':768,'c':1.5},'distribution':{0:0.24609375,1:0.205078125,2:0.1171875,3:0.0439453125,4:0.009765625,5:0.0009765625}}
 Saber768={'series':'Saber','name':768,'parameter':{'n':768,'q':2**13,'s':2.29,'mm':1024,'c':1.6},'distribution':{0:0.2734375,1:0.21875,2:0.1093755,3:0.03125,4:0.00390625}}
@@ -204,7 +204,10 @@ def dual_guess_estimation(instance,costmodel,asm):
 			if m > mm:
 				m=mm
 			dual,M=dual_cost(n,q,m,r,b,c,S,costmodel,asm)
-			guess=M+S
+			if S==0:
+				guess=0
+			else:
+				guess=M+S
 			cost=guess+math.log(2**(dual-guess)+1,2) # replace 2**dual+2**guess to avoid too large numbers
 			if cost<mincost:
 				mincost=cost
