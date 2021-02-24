@@ -7,7 +7,7 @@ It includes 3 algorithms:
 2. HYBRID1: the hybrid dual attack which guesses all possible vectors of the secret;
 3. HYBRID2M: the hybrid dual attack with optimal pruning and efficient matrix multiplication.
 
-Users can select different cost models and assumptions by setting different values to 'costmodel' and 'asm'.
+Users can select different cost models and assumptions by setting different values to "costmodel" and "asm".
 
 ## Verify the results 
 
