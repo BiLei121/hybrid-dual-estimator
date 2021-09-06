@@ -234,4 +234,4 @@ To estimate a new scheme other than those 5 NIST candidates, one need to provide
 Note that for the schemes that error and secret are from different distributions, one need to compute the scaling factor "c" in the parameter sets.
 
 ## Remarks
-The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. For example, the results under Hybrid 2 for NTRULPrime857 with and without the restriction are 168.088 and 168.024, respectively.
+The secret of NTRULPrime follows a distribution with a fixed Hamming weight. To unify the code, our estimator does not consider this restriction. The difference caused by this is negligible. 
