@@ -51,42 +51,42 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Kyber512</td>
   <td class=xl65 style='border-top:none;border-left:none'>1</td>
-  <td class=xl65 style='border-top:none;border-left:none'>118</td>
-  <td class=xl65 style='border-top:none;border-left:none'>115</td>
+  <td class=xl65 style='border-top:none;border-left:none'>117</td>
+  <td class=xl65 style='border-top:none;border-left:none'>114</td>
   <td class=xl65 style='border-top:none;border-left:none'>13</td>
-  <td class=xl65 style='border-top:none;border-left:none'>391</td>
-  <td class=xl65 style='border-top:none;border-left:none'>502</td>
+  <td class=xl65 style='border-top:none;border-left:none'>389</td>
+  <td class=xl65 style='border-top:none;border-left:none'>500</td>
   <td class=xl65 style='border-top:none;border-left:none'>3</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Kyber768</td>
   <td class=xl65 style='border-top:none;border-left:none'>3</td>
-  <td class=xl65 style='border-top:none;border-left:none'>182</td>
-  <td class=xl65 style='border-top:none;border-left:none'>176</td>
+  <td class=xl65 style='border-top:none;border-left:none'>181</td>
+  <td class=xl65 style='border-top:none;border-left:none'>175</td>
   <td class=xl65 style='border-top:none;border-left:none'>24</td>
-  <td class=xl65 style='border-top:none;border-left:none'>600</td>
-  <td class=xl65 style='border-top:none;border-left:none'>677</td>
-  <td class=xl65 style='border-top:none;border-left:none'>8</td>
+  <td class=xl65 style='border-top:none;border-left:none'>598</td>
+  <td class=xl65 style='border-top:none;border-left:none'>676</td>
+  <td class=xl65 style='border-top:none;border-left:none'>6</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Kyber1024</td>
   <td class=xl65 style='border-top:none;border-left:none'>5</td>
-  <td class=xl65 style='border-top:none;border-left:none'>254</td>
+  <td class=xl65 style='border-top:none;border-left:none'>253</td>
   <td class=xl65 style='border-top:none;border-left:none'>245</td>
   <td class=xl65 style='border-top:none;border-left:none'>34</td>
-  <td class=xl65 style='border-top:none;border-left:none'>837</td>
-  <td class=xl65 style='border-top:none;border-left:none'>862</td>
-  <td class=xl65 style='border-top:none;border-left:none'>9</td>
+  <td class=xl65 style='border-top:none;border-left:none'>836</td>
+  <td class=xl65 style='border-top:none;border-left:none'>864</td>
+  <td class=xl65 style='border-top:none;border-left:none'>8</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Saber512</td>
   <td class=xl65 style='border-top:none;border-left:none'>1</td>
   <td class=xl65 style='border-top:none;border-left:none'>117</td>
-  <td class=xl65 style='border-top:none;border-left:none'>115</td>
+  <td class=xl65 style='border-top:none;border-left:none'>114</td>
   <td class=xl65 style='border-top:none;border-left:none'>11</td>
-  <td class=xl65 style='border-top:none;border-left:none'>392</td>
-  <td class=xl65 style='border-top:none;border-left:none'>533</td>
-  <td class=xl65 style='border-top:none;border-left:none'>2</td>
+  <td class=xl65 style='border-top:none;border-left:none'>390</td>
+  <td class=xl65 style='border-top:none;border-left:none'>531</td>
+  <td class=xl65 style='border-top:none;border-left:none'>3</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Saber768</td>
@@ -94,139 +94,139 @@ The recommended values for Frodo976 and Frodo1344 are 6 and 5, respectively.
   <td class=xl65 style='border-top:none;border-left:none'>189</td>
   <td class=xl65 style='border-top:none;border-left:none'>184</td>
   <td class=xl65 style='border-top:none;border-left:none'>20</td>
-  <td class=xl65 style='border-top:none;border-left:none'>629</td>
-  <td class=xl65 style='border-top:none;border-left:none'>740</td>
+  <td class=xl65 style='border-top:none;border-left:none'>627</td>
+  <td class=xl65 style='border-top:none;border-left:none'>739</td>
   <td class=xl65 style='border-top:none;border-left:none'>5</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Saber1024</td>
   <td class=xl65 style='border-top:none;border-left:none'>5</td>
   <td class=xl65 style='border-top:none;border-left:none'>258</td>
-  <td class=xl65 style='border-top:none;border-left:none'>251</td>
-  <td class=xl65 style='border-top:none;border-left:none'>30</td>
-  <td class=xl65 style='border-top:none;border-left:none'>856</td>
+  <td class=xl65 style='border-top:none;border-left:none'>250</td>
+  <td class=xl65 style='border-top:none;border-left:none'>31</td>
+  <td class=xl65 style='border-top:none;border-left:none'>854</td>
   <td class=xl65 style='border-top:none;border-left:none'>908</td>
-  <td class=xl65 style='border-top:none;border-left:none'>7</td>
+  <td class=xl65 style='border-top:none;border-left:none'>8</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1024</td>
   <td class=xl65 style='border-top:none;border-left:none'>2</td>
-  <td class=xl65 style='border-top:none;border-left:none'>124</td>
-  <td class=xl65 style='border-top:none;border-left:none'>122</td>
+  <td class=xl65 style='border-top:none;border-left:none'>123</td>
+  <td class=xl65 style='border-top:none;border-left:none'>121</td>
   <td class=xl65 style='border-top:none;border-left:none'>14</td>
-  <td class=xl65 style='border-top:none;border-left:none'>416</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1030</td>
+  <td class=xl65 style='border-top:none;border-left:none'>415</td>
+  <td class=xl65 style='border-top:none;border-left:none'>1028</td>
   <td class=xl65 style='border-top:none;border-left:none'>2</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1280</td>
   <td class=xl65 style='border-top:none;border-left:none'>3</td>
-  <td class=xl65 style='border-top:none;border-left:none'>182</td>
+  <td class=xl65 style='border-top:none;border-left:none'>181</td>
   <td class=xl65 style='border-top:none;border-left:none'>179</td>
   <td class=xl65 style='border-top:none;border-left:none'>15</td>
-  <td class=xl65 style='border-top:none;border-left:none'>614</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1358</td>
-  <td class=xl65 style='border-top:none;border-left:none'>3</td>
+  <td class=xl65 style='border-top:none;border-left:none'>613</td>
+  <td class=xl65 style='border-top:none;border-left:none'>1356</td>
+  <td class=xl65 style='border-top:none;border-left:none'>2</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Dilithium1792</td>
   <td class=xl65 style='border-top:none;border-left:none'>5</td>
   <td class=xl65 style='border-top:none;border-left:none'>251</td>
-  <td class=xl65 style='border-top:none;border-left:none'>247</td>
-  <td class=xl65 style='border-top:none;border-left:none'>29</td>
-  <td class=xl65 style='border-top:none;border-left:none'>844</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1717</td>
-  <td class=xl65 style='border-top:none;border-left:none'>3</td>
+  <td class=xl65 style='border-top:none;border-left:none'>246</td>
+  <td class=xl65 style='border-top:none;border-left:none'>30</td>
+  <td class=xl65 style='border-top:none;border-left:none'>843</td>
+  <td class=xl65 style='border-top:none;border-left:none'>1716</td>
+  <td class=xl65 style='border-top:none;border-left:none'>5</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Frodo640</td>
   <td class=xl65 style='border-top:none;border-left:none'>1</td>
-  <td class=xl65 style='border-top:none;border-left:none'>142</td>
-  <td class=xl65 style='border-top:none;border-left:none'>140</td>
-  <td class=xl65 style='border-top:none;border-left:none'>9</td>
-  <td class=xl65 style='border-top:none;border-left:none'>477</td>
+  <td class=xl65 style='border-top:none;border-left:none'>141</td>
+  <td class=xl65 style='border-top:none;border-left:none'>139</td>
+  <td class=xl65 style='border-top:none;border-left:none'>10</td>
+  <td class=xl65 style='border-top:none;border-left:none'>475</td>
   <td class=xl65 style='border-top:none;border-left:none'>640</td>
   <td class=xl65 style='border-top:none;border-left:none'>2</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Frodo976</td>
   <td class=xl65 style='border-top:none;border-left:none'>3</td>
-  <td class=xl65 style='border-top:none;border-left:none'>206</td>
+  <td class=xl65 style='border-top:none;border-left:none'>205</td>
   <td class=xl65 style='border-top:none;border-left:none'>202</td>
   <td class=xl65 style='border-top:none;border-left:none'>17</td>
-  <td class=xl65 style='border-top:none;border-left:none'>690</td>
+  <td class=xl65 style='border-top:none;border-left:none'>689</td>
   <td class=xl65 style='border-top:none;border-left:none'>976</td>
-  <td class=xl65 style='border-top:none;border-left:none'>4</td>
+  <td class=xl65 style='border-top:none;border-left:none'>3</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>Frodo1344</td>
   <td class=xl65 style='border-top:none;border-left:none'>5</td>
-  <td class=xl65 style='border-top:none;border-left:none'>271</td>
+  <td class=xl65 style='border-top:none;border-left:none'>270</td>
   <td class=xl65 style='border-top:none;border-left:none'>264</td>
-  <td class=xl65 style='border-top:none;border-left:none'>29</td>
+  <td class=xl65 style='border-top:none;border-left:none'>28</td>
   <td class=xl65 style='border-top:none;border-left:none'>903</td>
-  <td class=xl65 style='border-top:none;border-left:none'>1256</td>
-  <td class=xl65 style='border-top:none;border-left:none'>7</td>
+  <td class=xl65 style='border-top:none;border-left:none'>1257</td>
+  <td class=xl65 style='border-top:none;border-left:none'>6</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime653</td>
   <td class=xl65 style='border-top:none;border-left:none'>1</td>
-  <td class=xl65 style='border-top:none;border-left:none'>131</td>
+  <td class=xl65 style='border-top:none;border-left:none'>130</td>
   <td class=xl65 style='border-top:none;border-left:none'>125</td>
-  <td class=xl65 style='border-top:none;border-left:none'>26</td>
-  <td class=xl65 style='border-top:none;border-left:none'>425</td>
-  <td class=xl65 style='border-top:none;border-left:none'>530</td>
-  <td class=xl65 style='border-top:none;border-left:none'>6</td>
+  <td class=xl65 style='border-top:none;border-left:none'>25</td>
+  <td class=xl65 style='border-top:none;border-left:none'>424</td>
+  <td class=xl65 style='border-top:none;border-left:none'>531</td>
+  <td class=xl65 style='border-top:none;border-left:none'>5</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime761</td>
   <td class=xl65 style='border-top:none;border-left:none'>2</td>
   <td class=xl65 style='border-top:none;border-left:none'>155</td>
   <td class=xl65 style='border-top:none;border-left:none'>148</td>
-  <td class=xl65 style='border-top:none;border-left:none'>39</td>
-  <td class=xl65 style='border-top:none;border-left:none'>502</td>
-  <td class=xl65 style='border-top:none;border-left:none'>587</td>
+  <td class=xl65 style='border-top:none;border-left:none'>38</td>
+  <td class=xl65 style='border-top:none;border-left:none'>501</td>
+  <td class=xl65 style='border-top:none;border-left:none'>590</td>
   <td class=xl65 style='border-top:none;border-left:none'>7</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime857</td>
   <td class=xl65 style='border-top:none;border-left:none'>2</td>
-  <td class=xl65 style='border-top:none;border-left:none'>177</td>
+  <td class=xl65 style='border-top:none;border-left:none'>176</td>
   <td class=xl65 style='border-top:none;border-left:none'>168</td>
-  <td class=xl65 style='border-top:none;border-left:none'>50</td>
-  <td class=xl65 style='border-top:none;border-left:none'>570</td>
-  <td class=xl65 style='border-top:none;border-left:none'>651</td>
-  <td class=xl65 style='border-top:none;border-left:none'>9</td>
+  <td class=xl65 style='border-top:none;border-left:none'>46</td>
+  <td class=xl65 style='border-top:none;border-left:none'>569</td>
+  <td class=xl65 style='border-top:none;border-left:none'>655</td>
+  <td class=xl65 style='border-top:none;border-left:none'>8</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime953</td>
   <td class=xl65 style='border-top:none;border-left:none'>3</td>
-  <td class=xl65 style='border-top:none;border-left:none'>196</td>
+  <td class=xl65 style='border-top:none;border-left:none'>195</td>
   <td class=xl65 style='border-top:none;border-left:none'>187</td>
   <td class=xl65 style='border-top:none;border-left:none'>44</td>
   <td class=xl65 style='border-top:none;border-left:none'>635</td>
-  <td class=xl65 style='border-top:none;border-left:none'>721</td>
-  <td class=xl65 style='border-top:none;border-left:none'>9</td>
+  <td class=xl65 style='border-top:none;border-left:none'>726</td>
+  <td class=xl65 style='border-top:none;border-left:none'>8</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime1013</td>
   <td class=xl65 style='border-top:none;border-left:none'>4</td>
-  <td class=xl65 style='border-top:none;border-left:none'>210</td>
+  <td class=xl65 style='border-top:none;border-left:none'>209</td>
   <td class=xl65 style='border-top:none;border-left:none'>200</td>
-  <td class=xl65 style='border-top:none;border-left:none'>43</td>
-  <td class=xl65 style='border-top:none;border-left:none'>683</td>
-  <td class=xl65 style='border-top:none;border-left:none'>780</td>
-  <td class=xl65 style='border-top:none;border-left:none'>10</td>
+  <td class=xl65 style='border-top:none;border-left:none'>45</td>
+  <td class=xl65 style='border-top:none;border-left:none'>681</td>
+  <td class=xl65 style='border-top:none;border-left:none'>783</td>
+  <td class=xl65 style='border-top:none;border-left:none'>9</td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:25.0pt'>
   <td height=33 class=xl65 style='height:25.0pt;border-top:none'>NTRULPrime1277</td>
   <td class=xl65 style='border-top:none;border-left:none'>5</td>
-  <td class=xl65 style='border-top:none;border-left:none'>270</td>
+  <td class=xl65 style='border-top:none;border-left:none'>269</td>
   <td class=xl65 style='border-top:none;border-left:none'>256</td>
-  <td class=xl65 style='border-top:none;border-left:none'>85</td>
-  <td class=xl65 style='border-top:none;border-left:none'>869</td>
-  <td class=xl65 style='border-top:none;border-left:none'>927</td>
-  <td class=xl65 style='border-top:none;border-left:none'>14</td>
+  <td class=xl65 style='border-top:none;border-left:none'>90</td>
+  <td class=xl65 style='border-top:none;border-left:none'>867</td>
+  <td class=xl65 style='border-top:none;border-left:none'>936</td>
+  <td class=xl65 style='border-top:none;border-left:none'>13</td>
 </table>
 
 ## Estimate a new scheme

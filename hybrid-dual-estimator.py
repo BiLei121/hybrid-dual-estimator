@@ -26,8 +26,8 @@ NTRULPrime953={'series':'NTRULPrime','name':953,'parameter':{'n':953,'q':6343,'s
 NTRULPrime1013={'series':'NTRULPrime','name':1013,'parameter':{'n':1013,'q':7177,'s':(2/3)**0.5,'mm':1269,'c':1.3},'distribution':{0:621/1013,1:392/1013/2}}
 NTRULPrime1277={'series':'NTRULPrime','name':1277,'parameter':{'n':1277,'q':7879,'s':(2/3)**0.5,'mm':1533,'c':1.4},'distribution':{0:848/1277,1:429/1277/2}}
 
-kappa=128 # security parameter
-precision=1
+kappa=7 # security parameter
+precision=0
 
 def bkz_time(d,b,costmodel):
   	if costmodel==1:
