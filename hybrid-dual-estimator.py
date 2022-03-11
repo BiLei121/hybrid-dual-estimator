@@ -11,9 +11,9 @@ Saber512={'series':'Saber','name':512,'parameter':{'n':512,'q':2**13,'s':2.29,'m
 Saber768={'series':'Saber','name':768,'parameter':{'n':768,'q':2**13,'s':2.29,'mm':1024,'c':1.6},'distribution':{0:0.2734375,1:0.21875,2:0.1093755,3:0.03125,4:0.00390625}}
 Saber1024={'series':'Saber','name':1024,'parameter':{'n':1024,'q':2**13,'s':2.29,'mm':1280,'c':1.9},'distribution':{0:0.3125,1:0.234375,2:0.09375,3:0.015625}}
 
-Dilithium768={'series':'Dilithium','name':1024,'parameter':{'n':1024,'q':8380417,'s':2**0.5,'mm':1280},'distribution':{0:1/5,1:1/5,2:1/5}}
-Dilithium1024={'series':'Dilithium','name':1280,'parameter':{'n':1280,'q':8380417,'s':(20/3)**0.5,'mm':1536},'distribution':{0:1/9,1:1/9,2:1/9,3:1/9,4:1/9}}
-Dilithium1280={'series':'Dilithium','name':1792,'parameter':{'n':1792,'q':8380417,'s':2**0.5,'mm':2048},'distribution':{0:1/5,1:1/5,2:1/5}}
+Dilithium1024={'series':'Dilithium','name':1024,'parameter':{'n':1024,'q':8380417,'s':2**0.5,'mm':1280},'distribution':{0:1/5,1:1/5,2:1/5}}
+Dilithium1280={'series':'Dilithium','name':1280,'parameter':{'n':1280,'q':8380417,'s':(20/3)**0.5,'mm':1536},'distribution':{0:1/9,1:1/9,2:1/9,3:1/9,4:1/9}}
+Dilithium1792={'series':'Dilithium','name':1792,'parameter':{'n':1792,'q':8380417,'s':2**0.5,'mm':2048},'distribution':{0:1/5,1:1/5,2:1/5}}
 
 Frodo640={'series':'Frodo','name':640,'parameter':{'n':640,'q':2**15,'s':2.8,'mm':640},'distribution':{0:9288/2**16,1:8720/2**16,2:7216/2**16,3:5264/2**16,4:3384/2**16,5:1918/2**16,6:958/2**16,7:422/2**16,8:164/2**16,9:56/2**16,10:17/2**16,11:4/2**16,12:1/2**16}}
 Frodo976={'series':'Frodo','name':976,'parameter':{'n':976,'q':2**16,'s':2.3,'mm':976},'distribution':{0:11278/2**16,1:10277/2**16,2:7774/2**16,3:4882/2**16,4:2545/2**16,5:1101/2**16,6:396/2**16,7:118/2**16,8:29/2**16,9:6/2**16,10:1/2**16}}
@@ -292,9 +292,9 @@ Saber512_attack=dual_guess_estimation(Saber512,costmodel,asm)
 Saber768_attack=dual_guess_estimation(Saber768,costmodel,asm)
 Saber1024_attack=dual_guess_estimation(Saber1024,costmodel,asm)
 
-Dilithium768_attack=dual_guess_estimation(Dilithium768,costmodel,asm)
 Dilithium1024_attack=dual_guess_estimation(Dilithium1024,costmodel,asm)
 Dilithium1280_attack=dual_guess_estimation(Dilithium1280,costmodel,asm)
+Dilithium1792_attack=dual_guess_estimation(Dilithium1792,costmodel,asm)
 
 Frodo640_attack=dual_guess_estimation(Frodo640,costmodel,asm)
 Frodo976_attack=dual_guess_estimation(Frodo976,costmodel,asm)
